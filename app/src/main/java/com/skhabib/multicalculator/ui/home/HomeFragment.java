@@ -58,6 +58,10 @@ public class HomeFragment extends Fragment {
         binding.b9.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "9"));
         binding.b0.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "0"));
         binding.bdot.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "."));
+        binding.bdiv.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "/"));
+        binding.bmul.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "*"));
+        binding.bminus.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "-"));
+        binding.bplus.setOnClickListener(v -> tvmain.setText(tvmain.getText() + "+"));
 
         binding.bac.setOnClickListener(v -> {
             if (tvmain != null && tvsec != null) {
@@ -158,6 +162,7 @@ public class HomeFragment extends Fragment {
                // Toast.makeText(getContext(), "Error in expression.", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override
