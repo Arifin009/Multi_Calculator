@@ -22,4 +22,9 @@
         android:name="com.skhabib.multicalculator.ui.slideshow.SlideshowFragment"
         android:label="@string/currency_converter"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_discount_cal"
+        android:name="com.skhabib.multicalculator.ui.Discount.DiscountFragment"
+        android:label="@string/discount_cal"
+        tools:layout="@layout/fragment_discount" />
 </navigation>

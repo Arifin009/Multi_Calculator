@@ -1,14 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- res/layout/fragment_discount.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Discount.DiscountFragment">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discount Calculator"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp"/>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edit_original_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Original Price"
+        android:inputType="numberDecimal"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/edit_discount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Discount Percentage"
+        android:inputType="numberDecimal"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/edit_tax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tax Percentage"
+        android:inputType="numberDecimal"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/text_final_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Final Price: "
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/text_tax_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tax Amount: "
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/text_discount_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discount Amount: "
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
