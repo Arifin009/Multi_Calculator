@@ -3,6 +3,7 @@ package com.skhabib.multicalculator.ui.unitCalculator;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.skhabib.multicalculator.R;
 import com.skhabib.multicalculator.databinding.FragmentGalleryBinding;
 
 public class UnitCalFragment extends Fragment {
@@ -28,11 +30,29 @@ public class UnitCalFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
+        binding.fromCovertInput.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                binding.fromCovertInput.setHint("");
+            } else {
+                binding.fromCovertInput.setHint("- -");
+            }
+        });
+        binding.toCovertInput.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                binding.toCovertInput.setHint("");
+            } else {
+                binding.toCovertInput.setHint("- -");
+            }
+        });
         String[] categories = {"Length", "Mass", "Area", "Volume", "Time", "Data"};
-        ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, categories);
-        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(
+                getContext(),
+                R.layout.spinner_selected_item,  // Custom layout for selected item
+                categories
+        );
+        categoryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);  // Custom layout for dropdown items
         binding.catagorySpinner.setAdapter(categoryAdapter);
+
 
         // Set listener for category spinner to update subcategories
         binding.catagorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -550,18 +570,39 @@ public class UnitCalFragment extends Fragment {
         return 0;
     }
     private void calculateConversion() {
-        String fromUnit = binding.convertFromCatagory.getSelectedItem().toString();
-        String toUnit = binding.convertToCatagory.getSelectedItem().toString();
+        // Check if selected items are null
+        Object fromUnitObject = binding.convertFromCatagory.getSelectedItem();
+        Object toUnitObject = binding.convertToCatagory.getSelectedItem();
+
+        // Check for null before calling toString
+        if (fromUnitObject == null || toUnitObject == null) {
+            // Optionally show a message to the user
+            Log.e("UnitCalFragment", "One of the selected units is null");
+            return; // Exit early if either spinner has no selection
+        }
+
+        String fromUnit = fromUnitObject.toString();
+        String toUnit = toUnitObject.toString();
+
         double inputValue;
 
+        // Try to parse the input value
         try {
-            inputValue = Double.parseDouble(binding.fromCovertInput.getText().toString());
+            String inputText = binding.fromCovertInput.getText().toString();
+            if (inputText.isEmpty()) {
+                binding.toCovertInput.setText(""); // Clear output if input is empty
+                return;
+            }
+            inputValue = Double.parseDouble(inputText);
         } catch (NumberFormatException e) {
-            binding.toCovertInput.setText("");
+            binding.toCovertInput.setText(""); // Clear output if parsing fails
+            Log.e("UnitCalFragment", "Invalid input value", e);
             return;
         }
 
+        // Perform the conversion
         double conversionResult = convertUnits(fromUnit, toUnit, inputValue);
         binding.toCovertInput.setText(String.valueOf(conversionResult));
     }
+
 }

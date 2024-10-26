@@ -16,5 +16,9 @@
             android:id="@+id/nav_currency_converter"
             android:icon="@drawable/currencyconvert"
             android:title="@string/currency_converter" />
+        <item
+            android:id="@+id/nav_discount_cal"
+            android:icon="@drawable/discountcal"
+            android:title="@string/discount_cal" />
     </group>
 </menu>

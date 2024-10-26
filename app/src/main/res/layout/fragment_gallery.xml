@@ -13,9 +13,10 @@
        android:id="@+id/catagory_spinner"
        android:layout_width="match_parent"
        android:layout_height="70dp"
-       android:background="@drawable/edit_txt_bg"
+       android:background="@drawable/spinner_bg"
        android:layout_marginTop="10dp"
        android:paddingStart="10dp"
+       android:scrollbars="none"
 
        />
     <Spinner
@@ -34,6 +35,8 @@
         android:layout_marginTop="10dp"
         android:paddingStart="10dp"
         android:inputType="number"
+        android:hint="- -"
+        android:textColorHint="@color/black"
         />
     <Spinner
         android:id="@+id/convert_to_catagory"
@@ -51,5 +54,8 @@
         android:layout_marginTop="10dp"
         android:paddingStart="10dp"
         android:inputType="number"
+        android:hint="- -"
+        android:textColorHint="@color/black"
+
         />
 </RelativeLayout>
