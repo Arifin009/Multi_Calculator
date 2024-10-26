@@ -1,4 +1,4 @@
-package com.skhabib.multicalculator.ui.home;
+package com.skhabib.multicalculator.ui.basiccal;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,7 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.skhabib.multicalculator.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+
+public class BasicCalFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private TextView tvsec, tvmain;
@@ -23,7 +24,7 @@ public class HomeFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        BasicCalViewModel basicCalViewModel = new ViewModelProvider(this).get(BasicCalViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

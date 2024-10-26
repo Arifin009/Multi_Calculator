@@ -12,4 +12,5 @@
     <color name="lemon">#00FF00</color>
     <color name="aqua">#00FFFF</color>
     <color name="button_bg">#D8DCDE</color>
+    <color name="icon_color">#6F6F6F</color>
 </resources>
