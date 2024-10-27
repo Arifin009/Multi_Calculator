@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.skhabib.multicalculator.R;
 import com.skhabib.multicalculator.databinding.FragmentDateOfBirthBinding;
@@ -61,6 +62,11 @@ private FragmentLoanBinding binding;
         return root;
     }
     private void calculateLoan() {
+        if (editInterestRate.getText().toString().isEmpty() || editPrincipal.getText().toString().isEmpty() || editTerm.getText().toString().isEmpty())
+        {
+            Toast.makeText( getContext(), "Empty field", Toast.LENGTH_SHORT).show();
+            return;
+        }
         double principal = Double.parseDouble(editPrincipal.getText().toString());
         double annualInterestRate = Double.parseDouble(editInterestRate.getText().toString());
         int term = Integer.parseInt(editTerm.getText().toString());

@@ -8,20 +8,30 @@
     android:padding="20dp"
 
     >
+<!--catagory_spinner-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFromCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        app:cardBackgroundColor="#B4EDF0F2"
+        app:cardElevation="@null"
+        >
+        <Spinner
+            android:id="@+id/catagory_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            />
 
-   <Spinner
-       android:id="@+id/catagory_spinner"
-       android:layout_width="match_parent"
-       android:layout_height="70dp"
-       android:background="@drawable/spinner_bg"
-       android:layout_marginTop="10dp"
-       android:paddingStart="10dp"
-       android:scrollbars="none"
 
-       />
+
+    </androidx.cardview.widget.CardView>
     <Spinner
         android:id="@+id/convert_from_catagory"
-        android:layout_below="@+id/catagory_spinner"
+        android:layout_below="@+id/cvFromCurrency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

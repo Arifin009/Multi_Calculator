@@ -47,10 +47,10 @@ public class UnitCalFragment extends Fragment {
         String[] categories = {"Length", "Mass", "Area", "Volume", "Time", "Data"};
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(
                 getContext(),
-                R.layout.spinner_selected_item,  // Custom layout for selected item
+                android.R.layout.simple_spinner_dropdown_item,  // Custom layout for selected item
                 categories
         );
-        categoryAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);  // Custom layout for dropdown items
+         // Custom layout for dropdown items
         binding.catagorySpinner.setAdapter(categoryAdapter);
 
 
