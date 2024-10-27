@@ -13,7 +13,10 @@
     <string name="discount_cal">Discount calculator</string>
     <string name="age_cal">Age calculator</string>
     <string name="loan_cal">Loan calculator</string>
+    <string name="bmi_cal">Bmi calculator</string>
     <string name="setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dark_mode">Dark Mode</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

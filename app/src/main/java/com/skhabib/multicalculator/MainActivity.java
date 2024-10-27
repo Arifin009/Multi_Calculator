@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_basiccal, R.id.nav_unit_converter, R.id.nav_currency_converter,R.id.nav_discount_cal,R.id.nav_age_cal,R.id.nav_loan,R.id.nav_setting)
+                R.id.nav_basiccal, R.id.nav_unit_converter, R.id.nav_currency_converter,R.id.nav_discount_cal,R.id.nav_age_cal,R.id.nav_loan,R.id.nav_setting,R.id.nav_bmi)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

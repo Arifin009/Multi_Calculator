@@ -41,6 +41,11 @@
             android:title="@string/loan_cal" />
         <item android:title="" android:enabled="false" />
         <item
+            android:id="@+id/nav_bmi"
+            android:icon="@drawable/bmi"
+            android:title="@string/bmi_cal" />
+        <item android:title="" android:enabled="false" />
+        <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/baseline_settings_24"
             android:title="@string/setting" />

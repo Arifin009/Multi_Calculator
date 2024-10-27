@@ -39,6 +39,11 @@
         android:label="@string/loan_cal"
         tools:layout="@layout/fragment_loan" />
     <fragment
+        android:id="@+id/nav_bmi"
+        android:name="com.skhabib.multicalculator.ui.bmi.BmiFragment"
+        android:label="@string/bmi_cal"
+        tools:layout="@layout/fragment_bmi" />
+    <fragment
         android:id="@+id/nav_setting"
         android:name="com.skhabib.multicalculator.ui.setting.SettingFragment"
         android:label="@string/setting"
