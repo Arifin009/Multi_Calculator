@@ -1,78 +1,130 @@
 <!-- res/layout/fragment_discount.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:layout_marginTop="20dp"
+    android:scrollbars="none"
+    >
 
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discount Calculator"
-        android:textSize="24sp"
-        android:layout_gravity="center"
-        android:paddingBottom="16dp"/>
-
-    <EditText
-        android:id="@+id/edit_original_price"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Original Price"
-        android:inputType="numberDecimal"
-        android:padding="12dp"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_discount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Discount Percentage"
-        android:inputType="numberDecimal"
-        android:padding="12dp"/>
+        <EditText
+            android:id="@+id/edit_original_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Original Price"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/edit_txt_bg"
+            android:layout_marginTop="20dp" />
 
-    <EditText
-        android:id="@+id/edit_tax"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tax Percentage"
-        android:inputType="numberDecimal"
-        android:padding="12dp"/>
+        <EditText
+            android:id="@+id/edit_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Discount Percentage"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/edit_txt_bg"
+            android:layout_marginTop="20dp" />
 
-    <Button
-        android:id="@+id/button_calculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:padding="12dp"
-        android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/edit_tax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tax Percentage"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/edit_txt_bg"
+            android:layout_marginTop="20dp" />
 
-    <TextView
-        android:id="@+id/text_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Results"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
+        <Button
+            android:id="@+id/button_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:padding="12dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/teal_200" />
 
-    <TextView
-        android:id="@+id/text_final_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Final Price: "
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Results"
+            android:textSize="25sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/text_tax_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tax Amount: "
-        android:layout_marginTop="8dp"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_txt_bg"
+            android:padding="20dp">
 
-    <TextView
-        android:id="@+id/text_discount_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discount Amount: "
-        android:layout_marginTop="8dp"/>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final Price: "
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/text_final_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0.0"
+                    android:textSize="20sp"
+                    android:textColor="@color/teal_200" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tax Amount: "
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/text_tax_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/teal_200"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount Amount: "
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/text_discount_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/teal_200"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

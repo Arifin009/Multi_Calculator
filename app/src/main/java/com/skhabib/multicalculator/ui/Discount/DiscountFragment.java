@@ -64,8 +64,8 @@ public class DiscountFragment extends Fragment {
         double finalPrice = taxableAmount + taxAmount;
 
         // Display results
-        binding.textDiscountAmount.setText("Discount Amount: " + String.format("%.2f", discountAmount));
-        binding.textTaxAmount.setText("Tax Amount: " + String.format("%.2f", taxAmount));
-        binding.textFinalPrice.setText("Final Price: " + String.format("%.2f", finalPrice));
+        binding.textDiscountAmount.setText(String.format("%.2f", discountAmount));
+        binding.textTaxAmount.setText(String.format("%.2f", taxAmount));
+        binding.textFinalPrice.setText(String.format("%.2f", finalPrice));
     }
 }

@@ -1,0 +1,169 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="50dp"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loan Calculator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginVertical="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repayment Method"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFromCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        app:cardBackgroundColor="#B4EDF0F2"
+        app:cardElevation="@null"
+        >
+            <Spinner
+                android:id="@+id/spinner_repayment_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+               />
+
+
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loan Principle"
+        android:textStyle="bold"
+        android:layout_marginVertical="20dp" />
+    <EditText
+        android:id="@+id/edit_principal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="- -"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_txt_bg"
+        android:gravity="end|center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interest"
+        android:textStyle="bold"
+        android:layout_marginVertical="20dp" />
+    <EditText
+        android:id="@+id/edit_interest_rate"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="- -%"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:background="@drawable/edit_txt_bg"
+        android:gravity="end|center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Term (Months)"
+        android:textStyle="bold"
+        android:layout_marginVertical="20dp" />
+    <EditText
+        android:id="@+id/edit_term"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="- -"
+        android:inputType="number"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_txt_bg"
+        android:gravity="end|center"
+        />
+
+
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/teal_200"
+        />
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Results"
+            android:textSize="25sp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_txt_bg"
+            android:padding="25dp"
+            android:layout_marginBottom="20dp"
+            >
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Payment:"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/text_total_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- -"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Interest:"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/text_total_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- -"
+                    android:textSize="20sp" />
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

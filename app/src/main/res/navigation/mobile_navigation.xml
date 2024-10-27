@@ -27,4 +27,20 @@
         android:name="com.skhabib.multicalculator.ui.Discount.DiscountFragment"
         android:label="@string/discount_cal"
         tools:layout="@layout/fragment_discount" />
+
+    <fragment
+        android:id="@+id/nav_age_cal"
+        android:name="com.skhabib.multicalculator.ui.dateOfbirth.AgeCalFragment"
+        android:label="@string/age_cal"
+        tools:layout="@layout/fragment_discount" />
+    <fragment
+        android:id="@+id/nav_loan"
+        android:name="com.skhabib.multicalculator.ui.loan.loanFragment"
+        android:label="@string/loan_cal"
+        tools:layout="@layout/fragment_loan" />
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.skhabib.multicalculator.ui.setting.SettingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>

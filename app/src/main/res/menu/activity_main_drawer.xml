@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
+        />
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_basiccal"
             android:icon="@drawable/basiccal"
-            android:title="@string/Basic_calculator" />
+            android:title="@string/Basic_calculator"
+            />
+        <item android:title="" android:enabled="false" />
         <item
             android:id="@+id/nav_unit_converter"
             android:icon="@drawable/unitcal"
             android:title="@string/unit_converter" />
+        <item android:title="" android:enabled="false" />
         <item
             android:id="@+id/nav_currency_converter"
             android:icon="@drawable/currencyconvert"
             android:title="@string/currency_converter" />
+        <item android:title="" android:enabled="false" />
         <item
             android:id="@+id/nav_discount_cal"
             android:icon="@drawable/discountcal"
             android:title="@string/discount_cal" />
+        <item android:title="" android:enabled="false" />
+        <item
+
+            android:id="@+id/nav_age_cal"
+            android:icon="@drawable/agecal"
+            android:title="@string/age_cal" />
+        <item android:title="" android:enabled="false" />
+        <item
+            android:id="@+id/nav_loan"
+            android:icon="@drawable/loanicon"
+            android:title="@string/loan_cal" />
+        <item android:title="" android:enabled="false" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/baseline_settings_24"
+            android:title="@string/setting" />
     </group>
+
 </menu>
