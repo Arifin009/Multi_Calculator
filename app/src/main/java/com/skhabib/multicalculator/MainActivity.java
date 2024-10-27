@@ -1,5 +1,6 @@
 package com.skhabib.multicalculator;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -34,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        SharedPreferences sharedPreferences =getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        boolean isDarkMode = sharedPreferences.getBoolean("DarkMode", false);
+
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_basiccal, R.id.nav_unit_converter, R.id.nav_currency_converter,R.id.nav_discount_cal,R.id.nav_age_cal,R.id.nav_loan,R.id.nav_setting)
                 .setOpenableLayout(drawer)

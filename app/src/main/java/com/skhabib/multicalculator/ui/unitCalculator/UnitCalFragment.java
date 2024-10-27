@@ -108,28 +108,26 @@ public class UnitCalFragment extends Fragment {
     private void updateSubcategorySpinners(String category) {
         String[] subcategories;
         switch (category) {
+
             case "Length":
-                subcategories = new String[]{"Meters", "Kilometers", "Miles","inch","feet","centimeters","millimeters",
-                        "yards","millimeter","Decimeter"};
+                subcategories = new String[]{"meters", "kilometers", "miles","inch","feet","centimeters","millimeters"};
                 break;
             case "Mass":
-                subcategories = new String[]{"Grams", "Kilograms", "Pounds","Ounces","Milligrams","Tonnes"};
+                subcategories = new String[]{"grams", "kilograms", "pounds","ounces","milligrams","tonnes"};
                 break;
             case "Area":
-                subcategories = new String[]{"Square Meters", "Hectares", "Acres",
-                        "Square Kilometers", "Square Miles", "Square Feet", "Square Inches", "Square Centimeters"};
+                subcategories = new String[]{"square meters", "hectares", "acres",
+                         "square feet", "square inches", "square centimeters"};
                 break;
             case "Volume":
-                subcategories = new String[]{"Liters", "Cubic Meters", "Gallons", "Cubic Feet", "Cubic Inches",
-                        "Cubic Centimeters", "Cubic Miles", "Cubic Yards", "Cubic Foot", "Cubic Inch"};
+                subcategories = new String[]{"liters", "cubic meters", "gallons", "cubic feet", "cubic inches"};
                 break;
             case "Time":
-                subcategories = new String[]{"Seconds", "Minutes", "Hours","Milliseconds",
-                        "Microseconds","Nanoseconds", "Days", "Weeks", "Months", "Years", "Decades", "Centuries"};
+                subcategories = new String[]{"seconds", "minutes", "hours","milliseconds",
+                        "microseconds","nanoseconds"};
                 break;
             case "Data":
-                subcategories = new String[]{"Bytes", "Kilobytes", "Megabytes", "Gigabytes",
-                        "Terabytes", "Petabytes","bit","Megabit","Gigabit","Terabit"};
+                subcategories = new String[]{"bytes", "kilobytes", "megabytes", "gigabytes","bits","megabits","gigabits"};
                 break;
             default:
                 subcategories = new String[]{};
@@ -150,326 +148,249 @@ public class UnitCalFragment extends Fragment {
         if (fromUnit.equals(toUnit)) return value;
 
         switch (fromUnit) {
-            case "Meters":
-                if (toUnit.equals("Kilometers")) return value / 1000;
-                if (toUnit.equals("Miles")) return value * 0.000621371;
+            //length
+            case "meters":
+                if (toUnit.equals("kilometers")) return value / 1000;
+                if (toUnit.equals("miles")) return value * 0.000621371;
                 if (toUnit.equals("inch")) return value * 39.3701;
                 if (toUnit.equals("feet")) return value * 3.28084;
                 if (toUnit.equals("centimeters")) return value * 100;
                 if (toUnit.equals("millimeters")) return value * 1000;
-                if (toUnit.equals("yards")) return value * 1.09361;
-                if (toUnit.equals("millimeter")) return value * 1000000;
-                if (toUnit.equals("Decimeter")) return value * 10;
-                break;
-            case "Kilometers":
-                if (toUnit.equals("Meters")) return value * 1000;
-                if (toUnit.equals("Miles")) return value * 0.621371;
-
-                break;
-            case "Hectares":
-                if (toUnit.equals("Acres")) return value * 2.47105;
-                if (toUnit.equals("Square Meters")) return value * 10000;
-                if (toUnit.equals("Square Kilometers")) return value * 0.01;
-                if (toUnit.equals("Square Miles")) return value * 0.00015625;
-                if (toUnit.equals("Square Feet")) return value * 10763910.4167;
-                if (toUnit.equals("Square Inches")) return value * 15500031.25;
-                if (toUnit.equals("Square Centimeters")) return value * 10000000000.0;
-                break;
-            case "Acres":
-                if (toUnit.equals("Hectares")) return value / 2.47105;
-                if (toUnit.equals("Square Meters")) return value * 4046.86;
-                if (toUnit.equals("Square Kilometers")) return value * 0.000247105;
-                if (toUnit.equals("Square Miles")) return value * 0.000015625;
-                if (toUnit.equals("Square Feet")) return value * 43560;
-                if (toUnit.equals("Square Inches")) return value * 6272640;
-                if (toUnit.equals("Square Centimeters")) return value * 4046856422.4;
-                break;
-            case "Milligrams":
-                if (toUnit.equals("Grams")) return value / 1000;
-                if (toUnit.equals("Kilograms")) return value / 1000000;
-                if (toUnit.equals("Pounds")) return value / 453.592;
-                if (toUnit.equals("Ounces")) return value / 28.3495;
-                if (toUnit.equals("Tonnes")) return value / 1000000000;
-                break;
-            case "Tonnes":
-                if (toUnit.equals("Grams")) return value * 1000000;
-                if (toUnit.equals("Kilograms")) return value * 1000;
-                if (toUnit.equals("Pounds")) return value * 2204.62;
-                if (toUnit.equals("Ounces")) return value * 35274;
-                if (toUnit.equals("Milligrams")) return value * 1000000000;
-                break;
-            case "Ounces":
-                if (toUnit.equals("Grams")) return value * 28.3495;
-                if (toUnit.equals("Kilograms")) return value / 35.274;
-                if (toUnit.equals("Pounds")) return value / 16;
-                if (toUnit.equals("Milligrams")) return value * 29.5735;
-
                 break;
 
-            case "Decimeter":
-                if (toUnit.equals("Meters")) return value / 10;
+            case "kilometers":
+                if (toUnit.equals("meters")) return value * 1000;
+                if (toUnit.equals("miles")) return value * 0.621371;
+                if (toUnit.equals("inch")) return value * 39_370.1;
+                if (toUnit.equals("feet")) return value * 3280.84;
+                if (toUnit.equals("centimeters")) return value * 100_000;
+                if (toUnit.equals("millimeters")) return value * 1_000_000;
+                break;
+
+            case "miles":
+                if (toUnit.equals("meters")) return value / 0.000621371;
+                if (toUnit.equals("kilometers")) return value / 0.621371;
+                if (toUnit.equals("inch")) return value * 63_360;
+                if (toUnit.equals("feet")) return value * 5280;
+                if (toUnit.equals("centimeters")) return value * 160_934;
+                if (toUnit.equals("millimeters")) return value * 1_609_344;
+                break;
+
+            case "inch":
+                if (toUnit.equals("meters")) return value / 39.3701;
+                if (toUnit.equals("kilometers")) return value / 39_370.1;
+                if (toUnit.equals("miles")) return value / 63_360;
+                if (toUnit.equals("feet")) return value / 12;
+                if (toUnit.equals("centimeters")) return value * 2.54;
+                if (toUnit.equals("millimeters")) return value * 25.4;
+                break;
+
+            case "feet":
+                if (toUnit.equals("meters")) return value / 3.28084;
+                if (toUnit.equals("kilometers")) return value / 3280.84;
+                if (toUnit.equals("miles")) return value / 5280;
+                if (toUnit.equals("inch")) return value * 12;
+                if (toUnit.equals("centimeters")) return value * 30.48;
+                if (toUnit.equals("millimeters")) return value * 304.8;
+                break;
+
+            case "centimeters":
+                if (toUnit.equals("meters")) return value / 100;
+                if (toUnit.equals("kilometers")) return value / 100_000;
+                if (toUnit.equals("miles")) return value / 160_934;
+                if (toUnit.equals("inch")) return value / 2.54;
+                if (toUnit.equals("feet")) return value / 30.48;
                 if (toUnit.equals("millimeters")) return value * 10;
-                if (toUnit.equals("yards")) return value / 10;
-                if (toUnit.equals("feet")) return value / 10;
-                if (toUnit.equals("inch")) return value / 10;
-                if (toUnit.equals("centimeters")) return value * 10;
-                if (toUnit.equals("millimeter")) return value * 1000000;
-
                 break;
+
             case "millimeters":
-                if (toUnit.equals("Meters")) return value / 1000;
-                if (toUnit.equals("centimeters")) return value / 10;
-                if (toUnit.equals("yards")) return value / 1093.61;
-                if (toUnit.equals("millimeter")) return value * 1000000;
-                if (toUnit.equals("Decimeter")) return value / 10;
-                if (toUnit.equals("feet")) return value / 304.8;
+                if (toUnit.equals("meters")) return value / 1000;
+                if (toUnit.equals("kilometers")) return value / 1_000_000;
+                if (toUnit.equals("miles")) return value / 1_609_344;
                 if (toUnit.equals("inch")) return value / 25.4;
+                if (toUnit.equals("feet")) return value / 304.8;
+                if (toUnit.equals("centimeters")) return value / 10;
                 break;
-            case "Square Meters":
-                if (toUnit.equals("Square Kilometers")) return value / 1000000;
-                if (toUnit.equals("Square Miles")) return value * 0.000000386102;
-                if (toUnit.equals("Square Feet")) return value * 10.7639;
-                if (toUnit.equals("Square Inches")) return value * 1550.0031;
-                if (toUnit.equals("Square Centimeters")) return value * 10000000;
+                //mass
+            case "grams":
+                if (toUnit.equals("kilograms")) return value / 1000;
+                if (toUnit.equals("pounds")) return value * 0.00220462;
+                if (toUnit.equals("ounces")) return value * 0.035274;
+                if (toUnit.equals("milligrams")) return value * 1000;
+                if (toUnit.equals("tonnes")) return value / 1_000_000;
                 break;
-            case "Square Kilometers":
-                if (toUnit.equals("Square Meters")) return value * 1000000;
-                if (toUnit.equals("Square Miles")) return value * 0.386102;
-                if (toUnit.equals("Square Feet")) return value * 10763910.4167;
-                if (toUnit.equals("Square Inches")) return value * 15500031.25;
-                if (toUnit.equals("Square Centimeters")) return value * 10000000000.0;
-                break;
-            case "Square Miles":
-                if (toUnit.equals("Square Meters")) return value * 2589988.110336;
-                if (toUnit.equals("Square Kilometers")) return value * 1.60934;
-                if (toUnit.equals("Square Feet")) return value * 27878400.0;
-                if (toUnit.equals("Square Inches")) return value * 401467200.0;
-                if (toUnit.equals("Square Centimeters")) return value * 2589988110336.0;
-                break;
-            case "Square Feet":
-                if (toUnit.equals("Square Meters")) return value / 10.7639;
-                if (toUnit.equals("Square Inches")) return value * 144;
-                if (toUnit.equals("Square Centimeters")) return value * 92903.04;
-                if (toUnit.equals("Square Miles")) return value / 27878400.0;
-                if (toUnit.equals("Square Kilometers")) return value / 10763910.4167;
-                break;
-            case "Square Inches":
-                if (toUnit.equals("Square Meters")) return value / 1550.0031;
-                if (toUnit.equals("Square Feet")) return value / 144;
-                if (toUnit.equals("Square Centimeters")) return value * 645.16;
-                if (toUnit.equals("Square Miles")) return value / 401467200.0;
-                if (toUnit.equals("Square Kilometers")) return value / 15500031.25;
 
+            case "kilograms":
+                if (toUnit.equals("grams")) return value * 1000;
+                if (toUnit.equals("pounds")) return value * 2.20462;
+                if (toUnit.equals("ounces")) return value * 35.274;
+                if (toUnit.equals("milligrams")) return value * 1_000_000;
+                if (toUnit.equals("tonnes")) return value / 1000;
                 break;
-            case "Square Centimeters":
-                if (toUnit.equals("Square Meters")) return value / 10000000;
-                if (toUnit.equals("Square Feet")) return value / 156250;
-                if (toUnit.equals("Square Inches")) return value / 645.16;
-                if (toUnit.equals("Square Miles")) return value / 2589988110336.0;
-                if (toUnit.equals("Square Kilometers")) return value / 10000000000.0;
 
+            case "pounds":
+                if (toUnit.equals("grams")) return value / 0.00220462;
+                if (toUnit.equals("kilograms")) return value / 2.20462;
+                if (toUnit.equals("ounces")) return value * 16;
+                if (toUnit.equals("milligrams")) return value / 0.00000220462;
+                if (toUnit.equals("tonnes")) return value / 2204.62;
                 break;
-            case "Liters":
-                if (toUnit.equals("Cubic Meters")) return value / 1000;
-                if (toUnit.equals("Gallons")) return value * 0.264172;
-                if (toUnit.equals("Cubic Feet")) return value * 28.31685;
-                if (toUnit.equals("Cubic Inches")) return value * 61023.744;
-                if (toUnit.equals("Cubic Centimeters")) return value * 1000000;
-                if (toUnit.equals("Cubic Miles")) return value / 219969242.0;
-                if (toUnit.equals("Cubic Yards")) return value * 1.30799;
-                break;
-            case "Cubic Meters":
-                if (toUnit.equals("Liters")) return value * 1000;
-                if (toUnit.equals("Gallons")) return value * 264.172;
-                if (toUnit.equals("Cubic Feet")) return value * 35.3147;
-                if (toUnit.equals("Cubic Inches")) return value * 61023.744;
-                if (toUnit.equals("Cubic Centimeters")) return value * 1000000000;
-                if (toUnit.equals("Cubic Miles")) return value / 219969242.0;
-                if (toUnit.equals("Cubic Yards")) return value * 1.30799;
 
+            case "ounces":
+                if (toUnit.equals("grams")) return value / 0.035274;
+                if (toUnit.equals("kilograms")) return value / 35.274;
+                if (toUnit.equals("pounds")) return value / 16;
+                if (toUnit.equals("milligrams")) return value / 0.000035274;
+                if (toUnit.equals("tonnes")) return value / 35_274;
                 break;
-            case "Gallons":
-                if (toUnit.equals("Liters")) return value / 0.264172;
-                if (toUnit.equals("Cubic Meters")) return value / 264.172;
-                if (toUnit.equals("Cubic Feet")) return value * 7.48052;
-                if (toUnit.equals("Cubic Inches")) return value * 1728;
-                if (toUnit.equals("Cubic Centimeters")) return value * 26417.2;
-                break;
-            case "Cubic Feet":
-                if (toUnit.equals("Cubic Meters")) return value / 28316.85;
-                if (toUnit.equals("Cubic Inches")) return value * 1728;
-                if (toUnit.equals("Cubic Centimeters")) return value * 2831685;
-                if (toUnit.equals("Liters")) return value / 7.48052;
-                if (toUnit.equals("Gallons")) return value / 7.48052;
-                if (toUnit.equals("Cubic Miles")) return value / 2787840000.0;
-                if (toUnit.equals("Cubic Yards")) return value * 0.568182;
 
+            case "milligrams":
+                if (toUnit.equals("grams")) return value / 1000;
+                if (toUnit.equals("kilograms")) return value / 1_000_000;
+                if (toUnit.equals("pounds")) return value * 0.00000220462;
+                if (toUnit.equals("ounces")) return value * 0.000035274;
+                if (toUnit.equals("tonnes")) return value / 1_000_000_000;
                 break;
-            case "Cubic Inches":
-                if (toUnit.equals("Cubic Meters")) return value / 1728;
-                if (toUnit.equals("Cubic Feet")) return value / 1728;
-                if (toUnit.equals("Cubic Centimeters")) return value * 16387.064;
-                if (toUnit.equals("Liters")) return value / 7.48052;
-                if (toUnit.equals("Gallons")) return value / 7.48052;
-                if (toUnit.equals("Cubic Miles")) return value / 2787840000.0;
-                if (toUnit.equals("Cubic Yards")) return value / 1728;
-                break;
-            case "Cubic Centimeters":
-                if (toUnit.equals("Cubic Meters")) return value / 1000000000;
-                if (toUnit.equals("Cubic Feet")) return value / 2831685;
-                if (toUnit.equals("Cubic Inches")) return value / 16387.064;
-                if (toUnit.equals("Liters")) return value / 7.48052;
-                if (toUnit.equals("Gallons")) return value / 7.48052;
-                if (toUnit.equals("Cubic Miles")) return value / 2787840000.0;
-                if (toUnit.equals("Cubic Yards")) return value / 16387.064;
 
+            case "tonnes":
+                if (toUnit.equals("grams")) return value * 1_000_000;
+                if (toUnit.equals("kilograms")) return value * 1000;
+                if (toUnit.equals("pounds")) return value * 2204.62;
+                if (toUnit.equals("ounces")) return value * 35_274;
+                if (toUnit.equals("milligrams")) return value * 1_000_000_000;
                 break;
-            case "Cubic Miles":
-                if (toUnit.equals("Cubic Meters")) return value /2787840000.0;
-                if (toUnit.equals("Cubic Yards")) return value * 7645548.737;
-                if (toUnit.equals("Cubic Feet")) return value * 2787840000.0;
-                if (toUnit.equals("Cubic Inches")) return value * 2787840000000.0;
-                if (toUnit.equals("Cubic Centimeters")) return value * 2787840000000000.0;
-                if (toUnit.equals("Liters")) return value / 219969242.0;
-                if (toUnit.equals("Gallons")) return value / 219969242.0;
+                //area
+            case "square meters":
+                if (toUnit.equals("hectares")) return value / 10_000;
+                if (toUnit.equals("acres")) return value * 0.000247105;
+                if (toUnit.equals("square feet")) return value * 10.7639;
+                if (toUnit.equals("square inches")) return value * 1550;
+                if (toUnit.equals("square centimeters")) return value * 10_000;
                 break;
-            case "Cubic Yards":
-                if (toUnit.equals("Cubic Meters")) return value * 0.836127;
-                if (toUnit.equals("Cubic Miles")) return value / 7645548.737;
-                if (toUnit.equals("Cubic Feet")) return value * 3;
-                if (toUnit.equals("Cubic Inches")) return value * 72913.2;
-                if (toUnit.equals("Cubic Centimeters")) return value * 836127;
-                if (toUnit.equals("Liters")) return value * 61.0237;
-                if (toUnit.equals("Gallons")) return value * 61.0237;
 
+            case "hectares":
+                if (toUnit.equals("square meters")) return value * 10_000;
+                if (toUnit.equals("acres")) return value * 2.47105;
+                if (toUnit.equals("square feet")) return value * 107_639;
+                if (toUnit.equals("square inches")) return value * 1_550_000;
+                if (toUnit.equals("square centimeters")) return value * 100_000_000;
                 break;
-            case "Seconds":
-                if (toUnit.equals("Minutes")) return value / 60;
-                if (toUnit.equals("Hours")) return value / 3600;
-                if (toUnit.equals("Milliseconds")) return value * 1000;
-                if (toUnit.equals("Microseconds")) return value * 1000000;
-                if (toUnit.equals("Nanoseconds")) return value * 1000000000;
-                if (toUnit.equals("Days")) return value / 86400;
-                if (toUnit.equals("Weeks")) return value / 604800;
-                if (toUnit.equals("Months")) return value / 2592000;
-                if (toUnit.equals("Years")) return value / 31536000;
-                if (toUnit.equals("Decades")) return value / 315360000;
-                if (toUnit.equals("Centuries")) return value / 3153600000.0;
-                break;
-            case "Minutes":
-                if (toUnit.equals("Seconds")) return value * 60;
-                if (toUnit.equals("Hours")) return value / 60;
-                if (toUnit.equals("Milliseconds")) return value * 60000;
-                if (toUnit.equals("Microseconds")) return value * 60000000;
-                if (toUnit.equals("Nanoseconds")) return value * 60000000000.0;
-                if (toUnit.equals("Days")) return value / 1440;
-                if (toUnit.equals("Weeks")) return value / 10080;
-                if (toUnit.equals("Months")) return value / 43800;
-                if (toUnit.equals("Years")) return value / 525600;
-                if (toUnit.equals("Decades")) return value / 5256000.0;
-                if (toUnit.equals("Centuries")) return value / 52560000.0;
 
+            case "acres":
+                if (toUnit.equals("square meters")) return value / 0.000247105;
+                if (toUnit.equals("hectares")) return value / 2.47105;
+                if (toUnit.equals("square feet")) return value * 43_560;
+                if (toUnit.equals("square inches")) return value * 6_272_640;
+                if (toUnit.equals("square centimeters")) return value * 4046.86 * 10000;
                 break;
-            case "Hours":
-                if (toUnit.equals("Seconds")) return value * 3600;
-                if (toUnit.equals("Minutes")) return value * 60;
-                if (toUnit.equals("Milliseconds")) return value * 3600000;
-                if (toUnit.equals("Microseconds")) return value * 3600000000.0;
-                if (toUnit.equals("Nanoseconds")) return value * 3600000000000.0;
-                if (toUnit.equals("Days")) return value / 24;
-                if (toUnit.equals("Weeks")) return value / 168;
-                if (toUnit.equals("Months")) return value / 730;
-                if (toUnit.equals("Years")) return value / 8760;
-                if (toUnit.equals("Decades")) return value / 87600.0;
-                if (toUnit.equals("Centuries")) return value / 876000.0;
 
+            case "square feet":
+                if (toUnit.equals("square meters")) return value / 10.7639;
+                if (toUnit.equals("hectares")) return value / 107_639;
+                if (toUnit.equals("acres")) return value / 43_560;
+                if (toUnit.equals("square inches")) return value * 144;
+                if (toUnit.equals("square centimeters")) return value * 929.03;
                 break;
-            case "Milliseconds":
-                if (toUnit.equals("Seconds")) return value / 1000;
-                if (toUnit.equals("Microseconds")) return value * 1000;
-                if (toUnit.equals("Nanoseconds")) return value * 1000000;
-                if (toUnit.equals("Hours")) return value / 3600000;
-                if (toUnit.equals("Minutes")) return value / 60000;
-                if (toUnit.equals("Days")) return value / 86400000;
-                if (toUnit.equals("Weeks")) return value / 604800000;
-                if (toUnit.equals("Months")) return value / 2592000000.0;
-                if (toUnit.equals("Years")) return value / 31536000000.0;
-                if (toUnit.equals("Decades")) return value / 315360000000.0;
-                if (toUnit.equals("Centuries")) return value / 3153600000000.0;
 
+            case "square inches":
+                if (toUnit.equals("square meters")) return value / 1550;
+                if (toUnit.equals("hectares")) return value / 1_550_000;
+                if (toUnit.equals("acres")) return value / 6_272_640;
+                if (toUnit.equals("square feet")) return value / 144;
+                if (toUnit.equals("square centimeters")) return value * 6.4516;
                 break;
-            case "Microseconds":
-                if (toUnit.equals("Seconds")) return value / 1000000;
-                if (toUnit.equals("Milliseconds")) return value / 1000;
-                if (toUnit.equals("Nanoseconds")) return value * 1000;
-                if (toUnit.equals("Hours")) return value / 3600000000.0;
-                if (toUnit.equals("Minutes")) return value / 60000000;
-                if (toUnit.equals("Days")) return value / 86400000000.0;
-                if (toUnit.equals("Weeks")) return value / 604800000000.0;
-                if (toUnit.equals("Months")) return value / 2592000000000.0;
-                if (toUnit.equals("Years")) return value / 31536000000000.0;
-                if (toUnit.equals("Decades")) return value / 315360000000000.0;
-                if (toUnit.equals("Centuries")) return value / 3153600000000000.0;
 
+            case "square centimeters":
+                if (toUnit.equals("square meters")) return value / 10_000;
+                if (toUnit.equals("hectares")) return value / 100_000_000;
+                if (toUnit.equals("acres")) return value / 4_046_860;
+                if (toUnit.equals("square feet")) return value / 929.03;
+                if (toUnit.equals("square inches")) return value / 6.4516;
                 break;
-            case "Nanoseconds":
-                if (toUnit.equals("Seconds")) return value / 1000000000;
-                if (toUnit.equals("Milliseconds")) return value / 1000000;
-                if (toUnit.equals("Microseconds")) return value / 1000;
-                if (toUnit.equals("Hours")) return value / 3600000000000.0;
-                if (toUnit.equals("Minutes")) return value / 60000000000.0;
-                if (toUnit.equals("Days")) return value / 86400000000000.0;
-                if (toUnit.equals("Weeks")) return value / 604800000000000.0;
-                if (toUnit.equals("Months")) return value / 2592000000000000.0;
-                if (toUnit.equals("Years")) return value / 31536000000000000.0;
-                if (toUnit.equals("Decades")) return value / 315360000000000000.0;
-                if (toUnit.equals("Centuries")) return value / 3153600000000000000.0;
+                //volume
+            case "liters":
+                if (toUnit.equals("cubic meters")) return value / 1000;
+                if (toUnit.equals("gallons")) return value * 0.264172;
+                if (toUnit.equals("cubic feet")) return value * 0.0353147;
+                if (toUnit.equals("cubic inches")) return value * 61.0237;
                 break;
-            case "Days":
-                if (toUnit.equals("Seconds")) return value * 86400;
-                if (toUnit.equals("Weeks")) return value / 7;
-                if (toUnit.equals("Months")) return value / 30;
-                if (toUnit.equals("Years")) return value / 365;
-                if (toUnit.equals("Decades")) return value / 3650;
-                if (toUnit.equals("Centuries")) return value / 36500.0;
 
+            case "cubic meters":
+                if (toUnit.equals("liters")) return value * 1000;
+                if (toUnit.equals("gallons")) return value * 264.172;
+                if (toUnit.equals("cubic feet")) return value * 35.3147;
+                if (toUnit.equals("cubic inches")) return value * 61_023.7;
                 break;
-            case "Weeks":
-                if (toUnit.equals("Seconds")) return value * 604800;
-                if (toUnit.equals("Days")) return value * 7;
-                if (toUnit.equals("Months")) return value / 4.34524;
-                if (toUnit.equals("Years")) return value / 52;
-                if (toUnit.equals("Decades")) return value / 520.0;
-                if (toUnit.equals("Centuries")) return value / 5200.0;
 
+            case "gallons":
+                if (toUnit.equals("liters")) return value / 0.264172;
+                if (toUnit.equals("cubic meters")) return value / 264.172;
+                if (toUnit.equals("cubic feet")) return value * 0.133681;
+                if (toUnit.equals("cubic inches")) return value * 231;
                 break;
-            case "Months":
-                if (toUnit.equals("Seconds")) return value * 2592000;
-                if (toUnit.equals("Years")) return value / 12;
-                if (toUnit.equals("Days")) return value * 30;
-                if (toUnit.equals("Weeks")) return value * 4.34524;
-                if (toUnit.equals("Decades")) return value / 120.0;
-                if (toUnit.equals("Centuries")) return value / 1200.0;
 
-
+            case "cubic feet":
+                if (toUnit.equals("liters")) return value / 0.0353147;
+                if (toUnit.equals("cubic meters")) return value / 35.3147;
+                if (toUnit.equals("gallons")) return value / 0.133681;
+                if (toUnit.equals("cubic inches")) return value * 1728;
                 break;
-            case "Years":
-                if (toUnit.equals("Seconds")) return value * 31536000;
-                if (toUnit.equals("Months")) return value * 12;
-                if (toUnit.equals("Decades")) return value / 10;
-                if (toUnit.equals("Centuries")) return value / 100;
-                if (toUnit.equals("Days")) return value * 365;
-                if (toUnit.equals("Weeks")) return value * 52;
 
+            case "cubic inches":
+                if (toUnit.equals("liters")) return value / 61.0237;
+                if (toUnit.equals("cubic meters")) return value / 61_023.7;
+                if (toUnit.equals("gallons")) return value / 231;
+                if (toUnit.equals("cubic feet")) return value / 1728;
                 break;
-            case "Decades":
-                if (toUnit.equals("Years")) return value * 10;
-                if (toUnit.equals("Centuries")) return value / 10;
-                if (toUnit.equals("Months")) return value * 120;
-                if (toUnit.equals("Weeks")) return value * 520;
-                if (toUnit.equals("Days")) return value * 3650;
+//time
+            case "seconds":
+                if (toUnit.equals("milliseconds")) return value * 1000;
+                if (toUnit.equals("microseconds")) return value * 1_000_000;
+                if (toUnit.equals("nanoseconds")) return value * 1_000_000_000;
+                if (toUnit.equals("minutes")) return value / 60;
+                if (toUnit.equals("hours")) return value / 3600;
+                break;
 
+            case "minutes":
+                if (toUnit.equals("seconds")) return value * 60;
+                if (toUnit.equals("milliseconds")) return value * 60 * 1000;
+                if (toUnit.equals("microseconds")) return value * 60 * 1_000_000;
+                if (toUnit.equals("nanoseconds")) return value * 60 * 1_000_000_000;
+                if (toUnit.equals("hours")) return value / 60;
                 break;
+
+            case "hours":
+                if (toUnit.equals("seconds")) return value * 3600;
+                if (toUnit.equals("milliseconds")) return value * 3600 * 1000;
+                if (toUnit.equals("microseconds")) return value * 3600 * 1_000_000;
+                if (toUnit.equals("nanoseconds")) return value * 3600 * 1_000_000_000;
+                if (toUnit.equals("minutes")) return value * 60;
+                break;
+
+            case "milliseconds":
+                if (toUnit.equals("seconds")) return value / 1000;
+                if (toUnit.equals("microseconds")) return value * 1000;
+                if (toUnit.equals("nanoseconds")) return value * 1_000_000;
+                if (toUnit.equals("minutes")) return value / (60 * 1000);
+                if (toUnit.equals("hours")) return value / (3600 * 1000);
+                break;
+
+            case "microseconds":
+                if (toUnit.equals("seconds")) return value / 1_000_000;
+                if (toUnit.equals("milliseconds")) return value / 1000;
+                if (toUnit.equals("nanoseconds")) return value * 1000;
+                if (toUnit.equals("minutes")) return value / (60 * 1_000_000);
+                if (toUnit.equals("hours")) return value / (3600 * 1_000_000);
+                break;
+
+            case "nanoseconds":
+                if (toUnit.equals("seconds")) return value / 1_000_000_000;
+                if (toUnit.equals("milliseconds")) return value / 1_000_000;
+                if (toUnit.equals("microseconds")) return value / 1000;
+                if (toUnit.equals("minutes")) return value / (60 * 1_000_000_000);
+                if (toUnit.equals("hours")) return value / (3600 * 1_000_000_000);
+                break;
+
             case "Centuries":
                 if (toUnit.equals("Years")) return value * 100;
                 if (toUnit.equals("Decades")) return value * 10;
@@ -477,92 +398,70 @@ public class UnitCalFragment extends Fragment {
                 if (toUnit.equals("Weeks")) return value * 5200;
                 if (toUnit.equals("Days")) return value * 36500;
                 break;
-            case "Bytes":
-                if (toUnit.equals("Kilobytes")) return value / 1024;
-                if (toUnit.equals("Megabytes")) return value / 1048576;
-                if (toUnit.equals("Gigabytes")) return value / 1073741824;
-                if (toUnit.equals("Terabytes")) return value / 1099511627776.0;
-                if (toUnit.equals("Petabytes")) return value / 1125899906842624.0;
+            case "bytes":
+                if (toUnit.equals("kilobytes")) return value / 1024;
+                if (toUnit.equals("megabytes")) return value / (1024 * 1024);
+                if (toUnit.equals("gigabytes")) return value / (1024 * 1024 * 1024);
+                if (toUnit.equals("bits")) return value * 8;
+                if (toUnit.equals("megabits")) return value * 8 / 1024;
+                if (toUnit.equals("gigabits")) return value * 8 / (1024 * 1024);
                 break;
-            case "Kilobytes":
-                if (toUnit.equals("Bytes")) return value * 1024;
-                if (toUnit.equals("Megabytes")) return value / 1024;
-                if (toUnit.equals("Gigabytes")) return value / 1048576;
-                if (toUnit.equals("Terabytes")) return value / 1073741824;
-                if (toUnit.equals("Petabytes")) return value / 1099511627776.0;
 
+            case "kilobytes":
+                if (toUnit.equals("bytes")) return value * 1024;
+                if (toUnit.equals("megabytes")) return value / 1024;
+                if (toUnit.equals("gigabytes")) return value / (1024 * 1024);
+                if (toUnit.equals("bits")) return value * 8 * 1024;
+                if (toUnit.equals("megabits")) return value * 8;
+                if (toUnit.equals("gigabits")) return value * 8 / 1024;
                 break;
-            case "Megabytes":
-                if (toUnit.equals("Bytes")) return value * 1048576;
-                if (toUnit.equals("Kilobytes")) return value * 1024;
-                if (toUnit.equals("Gigabytes")) return value / 1024;
-                if (toUnit.equals("Terabytes")) return value / 1048576;
-                if (toUnit.equals("Petabytes")) return value / 1073741824;
-                break;
-            case "Gigabytes":
-                if (toUnit.equals("Bytes")) return value * 1073741824;
-                if (toUnit.equals("Kilobytes")) return value * 1048576;
-                if (toUnit.equals("Megabytes")) return value * 1024;
-                if (toUnit.equals("Terabytes")) return value / 1024;
-                if (toUnit.equals("Petabytes")) return value / 1048576;
 
+            case "megabytes":
+                if (toUnit.equals("bytes")) return value * (1024 * 1024);
+                if (toUnit.equals("kilobytes")) return value * 1024;
+                if (toUnit.equals("gigabytes")) return value / 1024;
+                if (toUnit.equals("bits")) return value * 8 * (1024 * 1024);
+                if (toUnit.equals("megabits")) return value * 8;
+                if (toUnit.equals("gigabits")) return value * 8 / 1024;
                 break;
-            case "yards":
-                if (toUnit.equals("Meters")) return value / 1.09361;
-                if (toUnit.equals("millimeters")) return value * 914.4;
-                if (toUnit.equals("Decimeter")) return value * 10;
 
+            case "gigabytes":
+                if (toUnit.equals("bytes")) return value * (1024 * 1024 * 1024);
+                if (toUnit.equals("kilobytes")) return value * (1024 * 1024);
+                if (toUnit.equals("megabytes")) return value * 1024;
+                if (toUnit.equals("bits")) return value * 8 * (1024 * 1024 * 1024);
+                if (toUnit.equals("megabits")) return value * 8 * (1024 * 1024) / 1024;
+                if (toUnit.equals("gigabits")) return value * 8;
                 break;
-            case "millimeter":
-                if (toUnit.equals("Meters")) return value / 1000000;
-                if (toUnit.equals("millimeters")) return value / 1000;
-                if (toUnit.equals("yards")) return value / 914.4;
-                if (toUnit.equals("Decimeter")) return value / 10;
 
+            case "bits":
+                if (toUnit.equals("bytes")) return value / 8;
+                if (toUnit.equals("kilobytes")) return value / (8 * 1024);
+                if (toUnit.equals("megabytes")) return value / (8 * 1024 * 1024);
+                if (toUnit.equals("gigabytes")) return value / (8 * 1024 * 1024 * 1024);
+                if (toUnit.equals("megabits")) return value / 1_000_000;
+                if (toUnit.equals("gigabits")) return value / 1_000_000_000;
                 break;
-            case "feet":
-                if (toUnit.equals("Meters")) return value / 3.28084;
-                if (toUnit.equals("inch")) return value * 12;
-                if (toUnit.equals("Decimeter")) return value * 30.48;
 
+            case "megabits":
+                if (toUnit.equals("bytes")) return value * (8 * 1024 * 1024);
+                if (toUnit.equals("kilobytes")) return value * (8 * 1024);
+                if (toUnit.equals("megabytes")) return value / 8;
+                if (toUnit.equals("gigabytes")) return value / (8 * 1024);
+                if (toUnit.equals("bits")) return value * 1_000_000;
+                if (toUnit.equals("gigabits")) return value / 1000;
                 break;
-            case "inch":
-                if (toUnit.equals("Meters")) return value / 39.3701;
-                if (toUnit.equals("feet")) return value / 12;
-                if (toUnit.equals("Decimeter")) return value * 2.54;
 
+            case "gigabits":
+                if (toUnit.equals("bytes")) return value * (8 * 1024 * 1024 * 1024);
+                if (toUnit.equals("kilobytes")) return value * (8 * 1024 * 1024);
+                if (toUnit.equals("megabytes")) return value * (8 * 1024);
+                if (toUnit.equals("bits")) return value * 1_000_000_000;
+                if (toUnit.equals("megabits")) return value * 1000;
+                if (toUnit.equals("gigabytes")) return value / 8;
                 break;
-            case "centimeters":
-                if (toUnit.equals("Meters")) return value / 100;
-                if (toUnit.equals("millimeters")) return value * 10;
-                if (toUnit.equals("yards")) return value / 10;
-                if (toUnit.equals("feet")) return value / 30.48;
-                if (toUnit.equals("inch")) return value / 2.54;
 
-                break;
-            case "Miles":
-                if (toUnit.equals("Meters")) return value / 0.000621371;
-                if (toUnit.equals("Kilometers")) return value / 0.621371;
-                if (toUnit.equals("Feet")) return value * 5280;
-                if (toUnit.equals("Yards")) return value * 1760;
-                if (toUnit.equals("Inches")) return value * 63360;
 
-                break;
-            case "Grams":
-                if (toUnit.equals("Kilograms")) return value / 1000;
-                if (toUnit.equals("Pounds")) return value * 0.00220462;
-
-                break;
-            case "Kilograms":
-                if (toUnit.equals("Grams")) return value * 1000;
-                if (toUnit.equals("Pounds")) return value * 2.20462;
-
-                break;
-            case "Pounds":
-                if (toUnit.equals("Grams")) return value / 0.00220462;
-                if (toUnit.equals("Kilograms")) return value / 2.20462;
-
-                break;
 
             // Add additional conversions for other units here
         }

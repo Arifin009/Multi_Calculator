@@ -22,7 +22,7 @@
         android:padding="10dp"
         android:gravity="bottom"
         android:maxLines="1"
-        android:layout_weight="2"
+        android:layout_weight="1"
         tools:ignore="RtlCompat" />
 
     <TextView
@@ -37,7 +37,7 @@
         android:padding="10dp"
         android:gravity="bottom"
         android:maxLines="1"
-        android:layout_weight="1"
+        android:layout_weight="2"
         tools:ignore="RtlCompat" />
 
     <LinearLayout
