@@ -11,23 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <!-- Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age Calculator"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp"
-        android:layout_marginTop="20dp"/>
 
-    <!-- Date of Birth Picker -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Date of Birth:"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp" />
+
+        <!-- Age Result Display -->
+        <TextView
+            android:id="@+id/text_age_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your Date of Birth: "
+            android:textSize="20sp"
+            android:layout_marginVertical="20dp"
+
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
 
     <DatePicker
         android:id="@+id/date_picker_dob"
@@ -48,16 +44,6 @@
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
 
-    <!-- Age Result Display -->
-    <TextView
-        android:id="@+id/text_age_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Age: "
-        android:textSize="20sp"
-       android:layout_marginVertical="20dp"
 
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </ScrollView>

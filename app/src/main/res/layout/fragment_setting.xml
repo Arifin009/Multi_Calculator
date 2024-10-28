@@ -15,6 +15,7 @@
         android:text="@string/dark_mode"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
+        style="@style/switch_color"
         />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/privacy"

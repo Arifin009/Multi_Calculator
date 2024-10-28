@@ -18,6 +18,7 @@
         app:contentPadding="10dp"
         app:cardBackgroundColor="#B4EDF0F2"
         app:cardElevation="@null"
+
         >
         <Spinner
             android:id="@+id/catagory_spinner"
@@ -47,6 +48,7 @@
         android:inputType="number"
         android:hint="- -"
         android:textColorHint="@color/black"
+
         />
     <Spinner
         android:id="@+id/convert_to_catagory"

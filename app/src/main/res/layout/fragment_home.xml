@@ -70,8 +70,8 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/bac"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:text="AC"
@@ -87,8 +87,8 @@
                           android:stateListAnimator="@null"                        android:layout_margin="3dp"
 
                         android:id="@+id/bc"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="C"
                          android:textSize="20sp"
                         android:layout_weight="1"
@@ -102,8 +102,8 @@
                         android:layout_margin="3dp"
 
                         android:id="@+id/bb1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="("
                          android:textSize="20sp"
                         android:layout_weight="1"
@@ -117,8 +117,8 @@
                         android:layout_margin="3dp"
 
                         android:id="@+id/bb2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text=")"
                          android:textSize="20sp"
                         android:layout_weight="1"
@@ -146,60 +146,54 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/bsin"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-
-                        android:layout_margin="3dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:stateListAnimator="@null"
-                        android:text="sin"
+                        android:text="si"
+                        android:layout_margin="2dp"
+                        android:textSize="20sp"
                         android:textAllCaps="false"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
-
                         app:cornerRadius="10dp" />
 
                     <com.google.android.material.button.MaterialButton
-                          app:cornerRadius="10dp"
-                          android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
-
                         android:id="@+id/bcos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="cos"
-                        android:textAllCaps="false"
-                         android:textSize="20sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-
-                        android:textColor="@color/black"/>
+                        android:stateListAnimator="@null"
+                        android:text="co"
+                        android:textSize="20sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        app:cornerRadius="10dp"
+                        android:layout_margin="2dp"/>
 
 
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
-
+                        android:layout_margin="2dp"
                         android:id="@+id/btan"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="tan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="ta"
                         android:textAllCaps="false"
                          android:textSize="20sp"
                         android:layout_weight="1"
-
                         android:textColor="@color/black"/>
 
 
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
+                        android:layout_margin="2dp"
 
                         android:id="@+id/blog"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="log"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="lo"
                         android:textAllCaps="false"
                          android:textSize="20sp"
                         android:layout_weight="1"
@@ -210,11 +204,10 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
-
+                        android:layout_margin="2dp"
                         android:id="@+id/bln"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:text="ln"
                         android:textAllCaps="false"
                          android:textSize="20sp"
@@ -242,11 +235,10 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
-
+                        android:layout_margin="2dp"
                         android:id="@+id/bfact"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="x!"
                         android:textAllCaps="false"
                          android:textSize="20sp"
@@ -258,11 +250,11 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
+                        android:layout_margin="2dp"
 
                         android:id="@+id/bsquare"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="x²"
                         android:textAllCaps="false"
                          android:textSize="20sp"
@@ -274,11 +266,11 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
+                        android:layout_margin="2dp"
 
                         android:id="@+id/bsqrt"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="√"
                         android:textAllCaps="false"
                          android:textSize="20sp"
@@ -290,15 +282,15 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
 
-                        android:layout_margin="3dp"
+                        android:layout_margin="2dp"
 
                         android:id="@+id/binv"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="1/x"
                         android:textAllCaps="false"
                          android:textSize="20sp"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:stateListAnimator="@null"
                         android:textColor="@color/black"/>
 
@@ -306,11 +298,11 @@
                     <com.google.android.material.button.MaterialButton
                           app:cornerRadius="10dp"
                           android:stateListAnimator="@null"
-                        android:layout_margin="3dp"
+                        android:layout_margin="2dp"
 
                         android:id="@+id/bpi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="π"
                         android:textAllCaps="false"
                          android:textSize="20sp"
